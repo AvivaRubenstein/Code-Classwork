@@ -36,8 +36,19 @@ section {
   background-color: goldenrod;
 }
 
+
+/*Block element: Take up the entire space-goes all the way across the page, 
+each starts on a new line
+
+ Inline element: The elements will all be within the same line, only take up as much width as they need 
+ Display:Block:  Make the image start on new line, take up entire width of the page, even though you only see the image and the rest is invisible
+ 
+ 
+ Display-none: whatever it is is hidden- there is an unordered list which is hidden*/
+
+
 /* Sets display of all elements with class selector to block */
-.display-block {
+ .display-block {
   display: block;
 }
 
