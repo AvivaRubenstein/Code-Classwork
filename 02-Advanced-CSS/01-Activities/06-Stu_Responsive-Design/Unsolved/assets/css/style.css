@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+header {
+  padding: 40px;
+  text-align: center;
+  background: #13293d;
+  color: #fff;
+}
+
+/* 
+What happens when we set the display property to flex? 
+TODO: Write your answer here 
+It allows us to use flexbox tools to position our elements.
+*/
+nav {
+  display: flex;
+  background-color: #d8a47f;
+}
+
+nav a {
+  color: #13293d;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* 
+What is the flex-wrap property? 
+TODO: Write your answer here 
+Flex-wrap makes it so that when elements are too big to fit side by side they 
+will wrap around and move onto the next line/row
+*/
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+aside {
+  flex: 1;
+  background-color: #b9c6ae;
+  padding: 80px;
+  text-align: center;
+}
+
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #13293d;
+  color: #fff;
+}
+
+/* 
+What does the justify-content property do? 
+TODO: Write your answer here 
+It aligns the elements -- they can be aligned in the center, 
+to the left, right, evenly spaced/space between etc
+*/
+.products {
+  flex: 4;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 
+What is the flex property a shorthand property for?
+What is it doing here? 
+TODO: Write your answer here
+FlexBox:
+We can do flex-grow, flex-shrink, flex-basis by writing flex: 
+followed by one number in each of these spaces.
+A 0 value is default, so a 0 in the grow or shrink spot means that that element won't change.
+The flex grow or shrink rate means that those elements will grow or shrink
+at a faster rate.  
+The basis is in pixels.   That's its starting size, and when it gets bigger
+or smaller than that size it will grow/shrink at the specified rate.
+
+Giving one value after flex (flex 4) means that it will grow 
+4x faster as other elements.  shrink will be set to 0 (Default) 
+and basis will be set to unspecified/default size.
+*/
+.card {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 10px;
+  flex: 0 0 400px;
+}
+
+.card header {
+  padding: 20px;
+}
+
+.card p {
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+}
+
+/* 
+What does the flex-direction property define?
+What is it doing here? 
+TODO: Write your answer here 
+Flex elements by default are in a row across the screen, from L to R
+but we can define the direction to be up and down by setting the 
+flex direction to column
+*/
+@media screen and (max-width: 768px) {
+  main,
+  nav {
+    flex-direction: column;
+  }
+}
