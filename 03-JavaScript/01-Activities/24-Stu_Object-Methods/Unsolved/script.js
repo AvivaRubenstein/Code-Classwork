@@ -8,20 +8,21 @@ var shelter = {
   }
 };
 
+
 //Debug the code below 
 function dogMessage() {
    console.log("Congrats! " + chosenPet.Lulu + ", a great dog, is available for adoption!");
-   apptMessage();
+   shelter.apptMessage();
 }
 
 function catMessage() {
   console.log("Congrats! " + chosenPet + ", an awesome cat, is available for adoption!");
-  shelter.apptMessage;
+  shelter.apptMessage();
 }
 
-if (dogs.includes(chosenPet)) {
+if (shelter.dogs.includes(chosenPet)) {
   dogMessage();
-} else if (cats.includes(chosenPet)) {
+} else if (shelter.cats.includes(chosenPet)) {
   catMessage();
 } else {
   console.log("It looks like the pet is not available.");
