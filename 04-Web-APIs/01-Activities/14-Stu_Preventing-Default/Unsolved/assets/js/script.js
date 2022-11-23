@@ -12,6 +12,8 @@ function calculateTotal(total, tipAmount) {
 }
 
 function addTip(event) {
+  //preventing the form from erasing the info
+  event.preventDefault();
   var tipPercentage = tipEl.value * .01;
   var total = totalEl.value;
   var tipAmount = calculateTip(total, tipPercentage);

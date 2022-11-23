@@ -27,7 +27,8 @@ function navigate(direction) {
 }
 
 // TODO: Describe the functionality of the following event listener.
-carousel.addEventListener("click", function() {
+carousel.addEventListener("click", function(event) {
+  //event.stopPropagation();
   window.location.href = images[index];
 });
 
