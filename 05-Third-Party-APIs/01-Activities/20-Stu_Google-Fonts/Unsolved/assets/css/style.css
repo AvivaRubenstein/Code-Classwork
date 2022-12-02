@@ -48,3 +48,10 @@
   background-color: var(--teal);
   color: var(--lightteal);
 }
+.hero{
+  font-family: 'Rubik Microbe', cursive;
+}
+.custom-navbar {
+  font-family: 'Lobster', cursive;
+
+}
