@@ -1,7 +1,7 @@
 // Use Day.js to format the date and assign to the declared variable.
 
 // TODO: 1. What is your graduation date in the following format: Jan 1, 1999?
-var gradDate = dayjs('2022-08-01').format('MMM D, YYYY');
+var gradDate = dayjs('2022-05-01').format('MMM D, YYYY');
 $('#1a').text(gradDate);
 
 // TODO: 2. What day of the week will 1/1/2027 be? (e.g. Is it "Monday"?)
@@ -23,6 +23,7 @@ $('#5a').text(unixFormat);
 // TODO: 6. What is the difference in days between May 4, 2027 and today? Hint:
 // You can display the difference between two dayjs objects by using the dayjs
 // diff method.)
+
 
 // dayjs object for May 4, 2027
 var targetDay = dayjs('2027-05-04');
