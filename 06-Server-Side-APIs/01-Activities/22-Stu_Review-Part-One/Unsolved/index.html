@@ -5,7 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Why does the `<link>` to `style.css` have to come last? -->
+  <!-- Why does the `<link>` to `style.css` have to come last? --> 
+  <!-- the apis/libraries that we are using need to be defined first
+    because we might use them in our js or css files
+    and we can't take advantage of them if we don't link the other libraries first
+  -->
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -15,7 +19,9 @@
 <body class="flex-column min-100-vh">
   <header class="hero">
     <h1 class="app-title">
-      <!-- TODO: What does this `<i>` element do? Where do these classes come from? -->
+      <!-- TODO: What does this `<i>` element do? Where do these classes come from? 
+        The <i> HTML element represents a range of text that is set off from the normal text for some reason, such as idiomatic text, technical terms, taxonomical designations, among others. Historically, these have been presented using italicized type, which is the original source of the <i> naming of this element.
+          often used to add icons-->
       <i class="fab fa-github"></i> Git it Done!
     </h1>
     <p>Search for a GitHub user or click on a language to see a list of repositories and how many open issues they have!
@@ -38,7 +44,9 @@
       <div class="card">
         <h3 class="card-header text-uppercase">Search By Topic</h3>
         <div id="language-buttons" class="card-body">
-          <!-- TODO: How are the `data-language` attributes being used? -->
+          <!-- TODO: How are the `data-language` attributes being used?
+          the data attr values will be used to search for repos when 
+        the button is clicked-->
           <button data-language="javascript" class="btn">JavaScript</button>
           <button data-language="html" class="btn">HTML</button>
           <button data-language="css" class="btn">CSS</button>
@@ -48,7 +56,8 @@
 
     <div class="col-12 col-md-8">
       <h2 class="subtitle">Showing Repositories for: <span id="repo-search-term"></span></h2>
-      <!-- TODO: Why is this `<div>` empty? What goes in here? -->
+      <!-- TODO: Why is this `<div>` empty? What goes in here? 
+        we need an empty HTML element for us to append repository data to-->
       <div id="repos-container" class="list-group"></div>
     </div>
   </main>

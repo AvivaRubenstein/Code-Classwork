@@ -21,11 +21,12 @@ var formSubmitHandler = function (event) {
 
 var buttonClickHandler = function (event) {
   // What is `event.target` referencing?
-  // TODO: Write your answer here
+  // TODO: it is targeting the data-attribute language we have stored associated with 
+  // whatever button was clicked to trigger the event
   var language = event.target.getAttribute('data-language');
 
   // Why is this `if` block in place?
-  // TODO: Write your answer here
+  // if there's a language to read from the button
   if (language) {
     getFeaturedRepos(language);
 
@@ -60,6 +61,11 @@ var getFeaturedRepos = function (language) {
 
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
+      //if the response is a 200 type status it is okay
+      //fetch api has json method avail to us, it's an asynch method, 
+      //when we call it we don't know how long it'll take bc
+      //it could have a LOT of data coming in ---so we use .then to tell it that once it's done
+      //we execute this function
       response.json().then(function (data) {
         displayRepos(data.items, language);
       });
@@ -73,7 +79,8 @@ var displayRepos = function (repos, searchTerm) {
   if (repos.length === 0) {
     repoContainerEl.textContent = 'No repositories found.';
     // What would happen if there was no `return;` here?
-    // TODO: Write your answer here
+    // the rest of the code would run, but there would be no repos and there might be errors because we weren't returned anything
+    //return exits us out of the function
     return;
   }
 
