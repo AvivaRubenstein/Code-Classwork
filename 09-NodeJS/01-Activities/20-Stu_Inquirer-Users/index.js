@@ -1,11 +1,12 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 
 inquirer
   .prompt([ 
     {
       type: 'input',  //accepts regular text
       message: 'What is your name?',
-      name: 'username',
+      name: 'name',
     },
     {
       type: 'checkbox',  
@@ -21,11 +22,18 @@ inquirer
     },
   ])
   //now we need to write all of these to a file
-  .then((response) => {
-    console.log(response.username + " " + response.languages + " " + response.method);
+//   .then((response) => {
+//     console.log(response.username + " " + response.languages + " " + response.method);
     
-    //we pass all of the data, make it into a JSON string w JSON.stringify, 
-    //add tabs as indentation with \t
-    //see solved 
-}
-  );
+//     //we pass all of the data, make it into a JSON string w JSON.stringify, 
+//     //add tabs as indentation with \t
+//     //see solved 
+// }
+//   );
+  .then((data) => {
+    const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
+
+    fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
+      err ? console.log(err) : console.log('Success!')
+    );
+  });

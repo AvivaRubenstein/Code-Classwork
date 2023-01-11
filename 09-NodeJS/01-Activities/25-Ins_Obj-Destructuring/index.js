@@ -1,3 +1,4 @@
+//setting up arya and jaime objects
 const arya = {
   name: 'Arya Stark',
   parents: ['Eddard Stark', 'Catelyn Stark'],
@@ -17,13 +18,16 @@ console.log(aryaName); // logs `"Arya Stark"`
 console.log(aryaParents); // logs `["Eddard Stark", "Catelyn Stark"]`
 
 // Now with ES6 object destructuring syntax, we can do this:
+//Object destructuring remaps the properties of the object --- we pull out of the object arya the name and the parents
 
 const { name, parents } = arya;
 
-console.log(name); // logs `"Jaime Lannister"`
-console.log(parents); // logs `["Tywin Lannister", "Joanna Lannister"]`
+console.log(name); // logs `"Arya Stark"`
+console.log(parents); // logs `['Eddard Stark', 'Catelyn Stark']`
 
 // We can also rename our destructured properties like so:
+//we use curly brackets for destructuring bc we are assigning them to a new object
+//we take original name, and put the new thing we want to call it after a colon: 
 
 const { name: jaimeName } = jaime;
 console.log(jaimeName); // logs `"Jaime Lannister"`
@@ -38,6 +42,9 @@ const logCharacter = (character) =>
 logCharacter(arya);
 
 // We can also use array destructuring to pull off an array's elements
+//Array destructuring --- uses regular brackets instead of curly brackets like w object destructuring
+//allows us to console log them out as individual variables
+//arrays get restructured based on their positions, whereas w objects you have to reference them by their key to rename
 const locations = ['Winterfell', 'Casterly Rock', 'Kings Landing'];
 const [winterfell, casterlyRock, kingLanding] = locations;
 
