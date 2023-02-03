@@ -6,6 +6,7 @@ const reviews = require('./db/reviews');
 const app = express();
 
 // Middleware for parsing application/json and urlencoded data
+//will help us parse anything that's a json object in the request body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -26,8 +27,9 @@ app.post('/api/reviews', (req, res) => {
   // Prepare a response object to send back to the client
   let response;
 
-  // Check if there is anything in the response body
+  // Check if there is anything in the response body, and if there is a product name sent to it
   if (req.body && req.body.product) {
+    //creating a json object to send back to the user, with the request's entire body in it (under data key)
     response = {
       status: 'success',
       data: req.body,

@@ -6,8 +6,10 @@ const reviews = require('./db/reviews');
 const app = express();
 
 // TODO: Implement middleware for the parsing of JSON data
-
+app.use(express.json());
 // TODO: Implement middleware for parsing of URL encoded data
+app.use(express.urlencoded({ extended: true }));
+
 
 // GET request for ALL reviews
 app.get('/api/reviews', (req, res) => {
@@ -60,6 +62,9 @@ app.post('/api/reviews', (req, res) => {
 });
 
 // POST request to upvote a review
+//the ids get randomly generated when the server starts up
+//and we can grab that specific review by putting the id after the / (instead of :review_id)
+//that is putting this in the url as a parameter
 app.post('/api/upvotes/:review_id', (req, res) => {
   if (req.body && req.params.review_id) {
     console.info(`${req.method} request received to upvote a review`);

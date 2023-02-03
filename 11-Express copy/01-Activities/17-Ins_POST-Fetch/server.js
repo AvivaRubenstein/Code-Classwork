@@ -32,6 +32,7 @@ app.post('/api/reviews', (req, res) => {
   const { product, review, username } = req.body;
 
   // If all the required properties are present
+  //our body requires a product, a review, and a username
   if (product && review && username) {
     // Variable for the object we will save
     const newReview = {
@@ -39,6 +40,7 @@ app.post('/api/reviews', (req, res) => {
       review,
       username,
       review_id: uuid(),
+      //uuid() is a unique identifier --- generates a random id
     };
 
     const response = {
