@@ -9,6 +9,7 @@ module.exports = {
   getSingleUser(req, res) {
     User.findOne({ _id: req.params.userId })
       .select('-__v')
+      //populating the post data into the query for a single user
       .populate('posts')
       .then((user) =>
         !user

@@ -8,7 +8,9 @@ const userSchema = new Schema(
     age: Number,
     posts: [
       {
+        //we are storing the ObjectId of each post so that we can reference it
         type: Schema.Types.ObjectId,
+        //we have a reference to the 'post' collection
         ref: 'post',
       },
     ],

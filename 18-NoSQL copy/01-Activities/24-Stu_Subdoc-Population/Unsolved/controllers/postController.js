@@ -11,6 +11,8 @@ module.exports = {
   },
   getSinglePost(req, res) {
     Post.findOne({ _id: req.params.postId })
+    //we are populating in the associated Tag data
+    .populate('tags')
       .then((post) =>
         !post
           ? res.status(404).json({ message: 'No post with that ID' })

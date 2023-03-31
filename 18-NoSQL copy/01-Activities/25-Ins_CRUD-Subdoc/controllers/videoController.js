@@ -19,6 +19,7 @@ module.exports = {
   createVideo(req, res) {
     Video.create(req.body)
       .then((video) => {
+    //User references Video
         return User.findOneAndUpdate(
           { _id: req.body.userId },
           { $addToSet: { videos: video._id } },
@@ -60,6 +61,7 @@ module.exports = {
           ? res.status(404).json({ message: 'No video with this id!' })
           : User.findOneAndUpdate(
               { videos: req.params.videoId },
+              //we need to delete that video from being associated with the user as well
               { $pull: { videos: req.params.videoId } },
               { new: true }
             )
