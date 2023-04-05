@@ -1,6 +1,7 @@
 import React from 'react';
 // Here are our required imports for testing
 import { render, unmountComponentAtNode } from 'react-dom';
+//act relates to act, arrange, and assert 
 import { act } from 'react-dom/test-utils';
 
 import Welcome from '../Welcome';
@@ -9,6 +10,7 @@ import Welcome from '../Welcome';
 let container = null;
 
 // We want to render our React tree to a DOM element that is attached so that we can watch events
+//beforeEach of our tests
 beforeEach(() => {
   // Setup a DOM element as the target
   container = document.createElement('div');
@@ -25,7 +27,10 @@ afterEach(() => {
 // It blocks describe the area of the application that we are testing
 it('renders with or without a name or topic', () => {
   // Act relates the act, arrange, assert pattern in testing
+
   // This first test renders a Welcome component with no props
+  //if no props are put in, meaning that there isn't anything in the forms text boxes
+  //it should say 'Hey there!'
   act(() => {
     render(<Welcome />, container);
   });
