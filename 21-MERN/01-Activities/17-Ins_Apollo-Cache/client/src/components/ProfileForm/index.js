@@ -9,6 +9,7 @@ const ProfileForm = () => {
 
   const [addProfile, { error }] = useMutation(ADD_PROFILE, {
     // The update method allows us to access and update the local cache
+    //update method, and pass in the cache and the new data for it
     update(cache, { data: { addProfile } }) {
       try {
         // First we retrieve existing profile data that is stored in the cache under the `QUERY_PROFILES` query
@@ -19,6 +20,7 @@ const ProfileForm = () => {
         cache.writeQuery({
           query: QUERY_PROFILES,
           // If we want new data to show up before or after existing data, adjust the order of this array
+          // ...profiles is laying out the ones we have from before, and putting the new one after it with addProfile
           data: { profiles: [...profiles, addProfile] },
         });
       } catch (e) {

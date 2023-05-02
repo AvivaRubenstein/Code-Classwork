@@ -1,4 +1,5 @@
 import React from 'react';
+//import InMemoryCache
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import Home from './pages/Home';
@@ -7,6 +8,7 @@ import Footer from './components/Footer';
 
 const client = new ApolloClient({
   uri: '/graphql',
+  //set up InMemoryCache
   cache: new InMemoryCache(),
 });
 

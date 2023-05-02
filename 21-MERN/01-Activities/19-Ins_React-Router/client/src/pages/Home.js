@@ -5,7 +5,7 @@ import ProfileList from '../components/ProfileList';
 import ProfileForm from '../components/ProfileForm';
 
 import { QUERY_PROFILES } from '../utils/queries';
-
+//Homepage's profile list has a bunch of links
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PROFILES);
   const profiles = data?.profiles || [];

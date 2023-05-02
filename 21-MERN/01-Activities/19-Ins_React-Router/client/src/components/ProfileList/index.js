@@ -24,7 +24,8 @@ const ProfileList = ({ profiles, title }) => {
                   </span>
                 </h4>
 
-                {/* Use <Link> component to create an internal hyperlink reference. Use `to` prop to set the path instead of `href` */}
+                {/* Use <Link> component to create an internal hyperlink reference. Use `to` prop to set the path instead of `href`
+                 since the to argument here in the Link matches the path argument in the Route it uses the Profile as an element and knows to grab the id from it */}
                 <Link
                   className="btn btn-block btn-squared btn-light text-dark"
                   to={`/profiles/${profile._id}`}
